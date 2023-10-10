@@ -1,4 +1,7 @@
 import keyword
+import math
+from math import isqrt
+import calculator
 
 """Basic
 """
@@ -124,3 +127,151 @@ else:
 
 message = "positive" if number > 0 else "0 or negative"
 print(message)
+
+"""Data structure
+"""
+# List
+numbers = [1, 2, 3, 4, -1, 0, ["A", "B"]]
+print(numbers[6][1])
+numbers = [1, 2, 3, 4, -1, 0]
+numbers.sort()
+print(numbers)
+numbers.reverse()
+print(numbers)
+numbers.append(1000)
+print(numbers)
+print(len(numbers))
+numbers.clear()
+print(numbers)
+numbers = [1, 2, 3, 4, -1, 0, 1]
+numbers.remove(1)  # remove first element match
+print(numbers)
+numbers.pop()
+print(numbers)
+del numbers[0]
+print(numbers)
+del numbers[0:3]
+print(numbers)
+
+# Set
+numbersList = [1, 1]
+numbersSet = {1, 1}
+lettersSet = {"A", "A", "B", "C", "C"}  # No order
+print(numbersList)
+print(numbersSet)
+print(lettersSet)
+
+# Union Intersection Difference
+lettersA = {"A", "B", "C", "D"}
+lettersB = {"E", "F", "A"}
+union = lettersA | lettersB
+intersection = lettersA & lettersB
+difference = lettersA - lettersB
+print(f"union: {union}")
+print(f"intersection: {intersection}")
+print(f"difference: {difference}")
+
+# Dictionaries ~ Object
+person = {
+    "name": "Declan",
+    "age": 20,
+    "address": "VN"
+}
+print(person["name"])
+print(person.keys())
+print(person.values())
+# person.clear()
+# print(person)
+print(person.get("age"))
+print(person)
+person["age"] = 100
+print(person)
+
+"""Loop
+"""
+names = ["Declan", "Thomas", "Nathan"]
+for name in names:
+    print(name)
+names = {"Declan", "Thomas", "Nathan"}  # No order
+for name in names:
+    print(name)
+
+for key in person:
+    print(f"key: {key}, value: {person[key]}")
+
+for key, value in person.items():
+    print(f"key: {key}, value: {value}")
+
+number = 0
+while number < 10:
+    print(number)
+    number += 1
+else:
+    print("while loop ended")
+
+number = 0
+while number < 10:
+    print(number)
+    if number == 5:
+        break
+    number += 1
+else:
+    print("while loop ended")
+
+number = 0
+while number < 10:
+    number += 1
+    if number < 5:
+        continue
+    print(number)
+else:
+    print("while loop ended")
+
+for n in [1, 2, 3, 4, 5, 6, 7]:
+    if n < 5:
+        continue
+    print(n)
+
+for n in [1, 2, 3, 4, 5, 6, 7]:
+    if n == 5:
+        break
+    print(n)
+
+"""Function
+"""
+
+
+def greet(my_name, my_age=1):
+    print(f"Hello {my_name} how are you at {my_age}?")
+
+
+greet("Declan", 20)
+greet("Thomas")
+
+
+def is_adult(my_age):
+    return my_age >= 16
+
+
+print(is_adult(20))
+
+
+def convert_gender(gender="unknown"):
+    if gender.upper() == "M":
+        return "Male"
+    elif gender.upper() == "F":
+        return "Female"
+    else:
+        return f"Gender {gender}"
+
+
+print(convert_gender("m"))
+
+# Built-in
+print(math.pi)
+print(math.isqrt(25))
+print(isqrt(25))
+
+# Modules
+print(calculator.add(1, 2))
+print(calculator.sub(1, 2))
